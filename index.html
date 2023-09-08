@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hidden Images</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-cosmo.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>Hidden Images</h1>
+  <input type="text" id="code" placeholder="Enter code">
+  <div id="images">
+    <img src="image1.jpg" style="display: none;">
+    <img src="image2.jpg" style="display: none;">
+    <img src="image3.jpg" style="display: none;">
+  </div>
+</div>
+<script>
+var code = document.getElementById("code").value;
+var images = document.getElementById("images");
+
+for (var i = 0; i < images.childNodes.length; i++) {
+  images.childNodes[i].style.display = "none";
+}
+
+document.getElementById("code").addEventListener("input", function() {
+  if (code == "1234") {
+    for (var i = 0; i < images.childNodes.length; i++) {
+      images.childNodes[i].style.display = "block";
+    }
+  }
+});
+</script>
+</body>
+</html>

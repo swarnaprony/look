@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Hidden Images</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-cosmo.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take a look</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add these lines to your <head> section -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-<div class="container">
-  <h1>Hidden Images</h1>
-  <input type="text" id="code" placeholder="Enter code">
-  <button id="show-images">Show Images</button>
-  <div id="images">
-    <img src="image.jpg" style="display: none;">
+  <div class="container mt-5">
+      <div class="text-center">
+          <h1 class="display-4">Take A Look</h1>
+      </div>
+      <div class="reveal-container mt-4 p-4">
+          <div class="form-group">
+              <input type="text" class="form-control" id="familyName" placeholder="Enter your name">
+          </div>
+          <button class="btn btn-dark" onclick="revealPregnancy()">Submit</button>
+          <div id="greeting" class="mt-3"></div>
+          <img src="hidden-image.jpg" id="hiddenImage" class="img-fluid mt-3" style="display: none;" alt="Hidden Image">
+      </div>
   </div>
-</div>
-<script>
-var code = document.getElementById("code").value;
-var images = document.getElementById("images");
-var showImagesButton = document.getElementById("show-images");
-
-for (var i = 0; i < images.childNodes.length; i++) {
-  images.childNodes[i].style.display = "none";
-}
-
-showImagesButton.addEventListener("click", function() {
-  if (code == "1234") {
-    for (var i = 0; i < images.childNodes.length; i++) {
-      images.childNodes[i].style.display = "block";
-    }
-  }
-});
-</script>
+  <script src="script.js"></script>
 </body>
+
 </html>

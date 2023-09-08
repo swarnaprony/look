@@ -9,6 +9,7 @@
 <div class="container">
   <h1>Hidden Images</h1>
   <input type="text" id="code" placeholder="Enter code">
+  <button id="show-images">Show Images</button>
   <div id="images">
     <img src="image.jpg" style="display: none;">
   </div>
@@ -16,12 +17,13 @@
 <script>
 var code = document.getElementById("code").value;
 var images = document.getElementById("images");
+var showImagesButton = document.getElementById("show-images");
 
 for (var i = 0; i < images.childNodes.length; i++) {
   images.childNodes[i].style.display = "none";
 }
 
-document.getElementById("code").addEventListener("input", function() {
+showImagesButton.addEventListener("click", function() {
   if (code == "1234") {
     for (var i = 0; i < images.childNodes.length; i++) {
       images.childNodes[i].style.display = "block";

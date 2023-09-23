@@ -190,6 +190,29 @@ function revealPregnancy() {
 
 
         } else {
+            let message = "Hi we are excited to tell you that we are having a baby!";
+            // Change the heading to "Surprise!"
+            headingElement.textContent = "Surprise!";
+            startFireworks();
+
+            let i = 0;
+            const revealInterval = setInterval(function () {
+                greetingElement.textContent += message[i];
+                i++;
+                if (i > message.length - 1) {
+                    clearInterval(revealInterval); // Stop the interval when text is fully revealed
+
+                    // Delay the image reveal by 1 second (1000 milliseconds)
+                    setTimeout(function () {
+                        hiddenImageElement.style.display = "block"; // Show the image
+                    }, 1000); // Adjust the delay time as needed
+
+                    // Change the heading to "Surprise!"
+                    headingElement.textContent = "Surprise!";
+                }
+
+            }, revealSpeed);
+
             greetingElement.textContent = `Enter your name again`;
         }
 
